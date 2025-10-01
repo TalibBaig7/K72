@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: font1;
+  src: url("/fonts/Lausanne-300.woff2") format("woff2");
+}
+/* src: url(../public/fonts/Lausanne-300.woff2); */
+@font-face {
+  font-family: font2;
+  src: url("/fonts/Lausanne-500.woff2") format("woff2");
+}
+
+
+.link {
+  opacity: 0;
+  transform: rotateX(90deg);
+  overflow: hidden; /* This is crucial - it was missing */
+  position: relative;
+  height: auto;
+}
+
+.moveLink {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Ensures it doesn't overflow */
+}
+
+.link:hover .moveLink {
+  opacity: 1;
+}
+
+.moveX {
+  animation: scroll 10s linear infinite;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.stairing {
+  height: 0;
+}
