@@ -26,10 +26,7 @@ const Video = () => {
       muted
       playsInline
     >
-      <source
-        src="public\videos\video.mp4"
-        type="video/mp4"
-      />
+      <source src="/videos/video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );
